@@ -3,5 +3,6 @@
 *.save
 *.~
 *.lock
+.kitchen
 hosts.ini
 ansible.log

@@ -1,0 +1,33 @@
+---
+driver:
+  name: vagrant
+driver_config:
+  customize:
+    audio: "none"
+#  name: docker
+#  run_command: /sbin/init
+#  privileged: true
+#  use_sudo: false
+
+provisioner:
+  name: ansible_playbook
+  hosts: localhost
+  require_chef_for_busser: false
+
+platforms:
+#  - name: debian/stretch64 
+  - name: centos/7
+
+verifier:
+  name: serverspec
+
+suites:
+  - name: default
+    provisioner:
+      name: ansible_playbook
+      playbook: playbooks/deploy.yml
+      additional_copy_path:
+        - "."
+    verifier:
+      patterns:
+        - tests/test_spec.rb

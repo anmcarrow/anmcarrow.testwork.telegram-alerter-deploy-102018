@@ -1,8 +1,12 @@
 ---
 - hosts: localhost
 #  connection: local
-  vars_files:
-    - "{{ playbook_dir }}/../vars/main.yml"
+
+#  vars
+#    telegram_bot_token: ""
+#    telegram_chat_id: ""
+#    target_web_page: ""
+#    prove_string: ""
 
   pre_tasks:
     - name: Check the OS compatibility
