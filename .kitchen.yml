@@ -19,10 +19,12 @@ verifier:
 suites:
   - name: default
     provisioner:
+      data_path: "."
       name: ansible_playbook
       playbook: playbooks/deploy.yml
       additional_copy_path:
         - "."
+        - "./tests"
     verifier:
       patterns:
         - tests/test_spec.rb

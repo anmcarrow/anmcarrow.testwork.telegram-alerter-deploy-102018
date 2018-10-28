@@ -12,8 +12,8 @@
     - name: Check the OS compatibility
       fail:
         msg: "Target OS version is incompatible with this scenario"
-      when: 
-        - (ansible_distribution != "Debian" and ansible_distribution_major_version != "9") 
+      when:
+        - (ansible_distribution != "Debian" and ansible_distribution_major_version != "9")
         - (ansible_distribution != "CentOS" and ansible_distribution_major_version != "7")
       tags: check
 
