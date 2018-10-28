@@ -1,3 +1,5 @@
 #!/bin/sh
 
-ansible-playbook -i localhost, ./playbooks/deploy.yml "$@"
+ansible-playbook -i localhost, \
+./playbooks/deploy.yml \
+"$@"
